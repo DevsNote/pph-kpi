@@ -20,6 +20,7 @@
                     ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
                     ['label' => 'Dashboard', 'icon' => 'dashboard', 'url' => ['/site/index']],
                     ['label' => 'ตัวชี้วัดกระทรวง', 'icon' => 'trophy', 'url' => ['/site/kpi']],
+                    /*
                     [
                         'label' => 'กลุ่มงานผู้ป่วยนอก',
                         'icon' => 'share',
@@ -119,6 +120,8 @@
                             ],
                         ],
                     ],
+                     * 
+                     */
                 ],
             ]
         ) ?>
