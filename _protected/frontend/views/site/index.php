@@ -33,7 +33,7 @@ $this->title = 'KPI Template โรงพยาบาลพบพระ';
                     <div class="progress">
                         <div class="progress-bar" style="width: 100%"></div>
                     </div>
-                    <span class="progress-description"><a href="pages/examples/invoice.html">รายละเอียด</a></span>
+                    <span class="progress-description"><a href="#">รายละเอียด</a></span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -50,7 +50,7 @@ $this->title = 'KPI Template โรงพยาบาลพบพระ';
                     <div class="progress">
                         <div class="progress-bar" style="width: 100%"></div>
                     </div>
-                    <span class="progress-description"><a href="pages/examples/invoice.html">รายละเอียด</a></span>
+                    <span class="progress-description"><a href="#">รายละเอียด</a></span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -71,7 +71,7 @@ $this->title = 'KPI Template โรงพยาบาลพบพระ';
                     <div class="progress">
                         <div class="progress-bar" style="width: 100%"></div>
                     </div>
-                    <span class="progress-description"><a href="pages/examples/invoice.html">รายละเอียด</a></span>
+                    <span class="progress-description"><a href="#">รายละเอียด</a></span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -88,7 +88,7 @@ $this->title = 'KPI Template โรงพยาบาลพบพระ';
                     <div class="progress">
                         <div class="progress-bar" style="width: 100%"></div>
                     </div>
-                    <span class="progress-description"><a href="pages/examples/invoice.html">รายละเอียด</a></span>
+                    <span class="progress-description"><a href="#">รายละเอียด</a></span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -101,7 +101,7 @@ $this->title = 'KPI Template โรงพยาบาลพบพระ';
         <div class="col-md-6">
             <div class="box box-danger">
                 <div class="box-header with-border">
-                    <h3 class="box-title"></h3>
+                    <h3 class="box-title">ประมวลผล ณ วันที่ : Demo Data</h3>
                     <div class="box-tools pull-right">
                         <!-- Buttons, labels, and many other things can be placed here! -->
                         <!-- Here is a label for example -->
@@ -140,7 +140,7 @@ $this->title = 'KPI Template โรงพยาบาลพบพระ';
         <div class="col-md-6">
             <div class="box box-info">
                 <div class="box-header with-border">
-                    <h3 class="box-title">5 อันดับโรคผู้ป่วยนอก</h3>
+                    <h3 class="box-title">ประมวลผล ณ วันที่ : Demo Data</h3>
                     <div class="box-tools pull-right">
                         <!-- Buttons, labels, and many other things can be placed here! -->
                         <!-- Here is a label for example -->
@@ -172,7 +172,7 @@ $this->title = 'KPI Template โรงพยาบาลพบพระ';
         <div class="col-md-6">
             <div class="box box-warning">
                 <div class="box-header with-border">
-                    <h3 class="box-title">5 อันดับโรคผู้ป่วยใน</h3>
+                    <h3 class="box-title">ประมวลผล ณ วันที่ : Demo Data</h3>
                     <div class="box-tools pull-right">
                         <!-- Buttons, labels, and many other things can be placed here! -->
                         <!-- Here is a label for example -->
@@ -207,7 +207,7 @@ $this->title = 'KPI Template โรงพยาบาลพบพระ';
         <div class="col-md-12">
             <div class="box box-success">
                 <div class="box-header with-border">
-                    <h3 class="box-title">ปิรามิดประชากร</h3>
+                    <h3 class="box-title">ประมวลผล ณ วันที่ : Demo Data</h3>
                     <div class="box-tools pull-right">
                         <!-- Buttons, labels, and many other things can be placed here! -->
                         <!-- Here is a label for example -->
