@@ -1,11 +1,11 @@
 <?php
-/* @var $this yii\web\View */
+    /* @var $this yii\web\View */
 
-use yii\helpers\Url;
-use miloschuman\highcharts\Highcharts;
+    use yii\helpers\Url;
+    use miloschuman\highcharts\Highcharts;
 
 Yii::setAlias('@icon', '../uploads/');
-$this->title = 'KPI Template โรงพยาบาลพบพระ';
+    $this->title = 'KPI Template โรงพยาบาลพบพระ';
 ?>
 
 <section class="content-header">
@@ -110,28 +110,36 @@ $this->title = 'KPI Template โรงพยาบาลพบพระ';
                 </div><!-- /.box-header -->
                 <div class="box-body">
                     <?php
-                    echo Highcharts::widget([
-                        'options' => [
-                            'chart' => ['type' => 'spline'],
-                            'title' => ['text' => 'ค่า CMI ผู้ป่วยใน'],
-                            'xAxis' => [
-                                'categories' => ['ต.ค.60', 'พ.ย.60', 'ธ.ค.60', 'ม.ค.61', 'ก.พ.61']
-                            ],
-                            'yAxis' => [
-                                'title' => ['text' => 'จำนวนครั้ง']
-                            ],
-                            'series' => [
-                                //['name' => 'Jane', 'data' => [1, 0, 4]],
-                                ['name' => 'ผู้ป่วยนอก', 'data' => [0.23, 0.30, 0.35, 0.41, 0.46]]
-                            ]
-                        ]
-                    ]);
+                        //$data_cmi[];
+                        foreach ($modelCMI AS $cmi) {
+                            $data_cmi[] = $cmi['amount_cmi'];
+                            // echo $data_cmi."<br>";
+                        }
                     ?>
+                    <?php
+                        echo Highcharts::widget([
+                            'options' => [
+                                'chart' => ['type' => 'spline'],
+                                'title' => ['text' => 'ค่า CMI ผู้ป่วยใน'],
+                                'xAxis' => [
+                                    'categories' => ['ต.ค.60', 'พ.ย.60', 'ธ.ค.60', 'ม.ค.61', 'ก.พ.61']
+                                ],
+                                'yAxis' => [
+                                    'title' => ['text' => 'จำนวนครั้ง']
+                                ],
+                                'series' => [
+                                    //['name' => 'Jane', 'data' => [1, 0, 4]],
+                                    ['name' => 'ผู้ป่วยนอก', 'data' => [0.23, 0.30, 0.35, 0.41, 0.46,0.48, 0.5, 0.52, 0.54, 0.56,0.58,0.6]]
+                                ]
+                            ]
+                        ]);
+                    ?>
+
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
         </div>
         <div class="col-md-6">
-            
+<?php print_r($data_cmi);?>
         </div>
     </div>
     <!-- /.row -->
@@ -149,22 +157,22 @@ $this->title = 'KPI Template โรงพยาบาลพบพระ';
                 </div><!-- /.box-header -->
                 <div class="box-body">
                     <?php
-                    echo Highcharts::widget([
-                        'options' => [
-                            'chart' => ['type' => 'bar'],
-                            'title' => ['text' => '5 อันดับโรคผู้ป่วยนอก'],
-                            'xAxis' => [
-                                'categories' => ['ท้องร่วง', 'ไข้เลือดออก', 'มาลาเรีย', 'ทางเดินอาหาร', 'ไข้หวัดใหญ่']
-                            ],
-                            'yAxis' => [
-                                'title' => ['text' => 'จำนวนครั้ง']
-                            ],
-                            'series' => [
-                                //['name' => 'Jane', 'data' => [1, 0, 4]],
-                                ['name' => 'ผู้ป่วยนอก', 'data' => [15, 17, 13, 20, 12]]
+                        echo Highcharts::widget([
+                            'options' => [
+                                'chart' => ['type' => 'bar'],
+                                'title' => ['text' => '5 อันดับโรคผู้ป่วยนอก'],
+                                'xAxis' => [
+                                    'categories' => ['ท้องร่วง', 'ไข้เลือดออก', 'มาลาเรีย', 'ทางเดินอาหาร', 'ไข้หวัดใหญ่']
+                                ],
+                                'yAxis' => [
+                                    'title' => ['text' => 'จำนวนครั้ง']
+                                ],
+                                'series' => [
+                                    //['name' => 'Jane', 'data' => [1, 0, 4]],
+                                    ['name' => 'ผู้ป่วยนอก', 'data' => [15, 17, 13, 20, 12]]
+                                ]
                             ]
-                        ]
-                    ]);
+                        ]);
                     ?>
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
@@ -181,22 +189,22 @@ $this->title = 'KPI Template โรงพยาบาลพบพระ';
                 </div><!-- /.box-header -->
                 <div class="box-body">
                     <?php
-                    echo Highcharts::widget([
-                        'options' => [
-                            'chart' => ['type' => 'bar'],
-                            'title' => ['text' => '5 อันดับโรคผู้ป่วยใน'],
-                            'xAxis' => [
-                                'categories' => ['ท้องร่วง', 'ไข้เลือดออก', 'มาลาเรีย', 'ทางเดินอาหาร', 'ไข้หวัดใหญ่']
-                            ],
-                            'yAxis' => [
-                                'title' => ['text' => 'จำนวนครั้ง']
-                            ],
-                            'series' => [
-                                //['name' => 'Jane', 'data' => [1, 0, 4]],
-                                ['name' => 'ผู้ป่วยใน', 'data' => [5, 7, 3, 10, 2]]
+                        echo Highcharts::widget([
+                            'options' => [
+                                'chart' => ['type' => 'bar'],
+                                'title' => ['text' => '5 อันดับโรคผู้ป่วยใน'],
+                                'xAxis' => [
+                                    'categories' => ['ท้องร่วง', 'ไข้เลือดออก', 'มาลาเรีย', 'ทางเดินอาหาร', 'ไข้หวัดใหญ่']
+                                ],
+                                'yAxis' => [
+                                    'title' => ['text' => 'จำนวนครั้ง']
+                                ],
+                                'series' => [
+                                    //['name' => 'Jane', 'data' => [1, 0, 4]],
+                                    ['name' => 'ผู้ป่วยใน', 'data' => [5, 7, 3, 10, 2]]
+                                ]
                             ]
-                        ]
-                    ]);
+                        ]);
                     ?>
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
@@ -216,45 +224,45 @@ $this->title = 'KPI Template โรงพยาบาลพบพระ';
                 </div><!-- /.box-header -->
                 <div class="box-body">
                     <?php
-                    echo Highcharts::widget([
-                        'options' => [
-                            'chart' => ['type' => 'bar'],
-                            'title' => ['text' => 'ปิรามิดประชากร ปี 2560'],
-                            'xAxis' => [[
-                            'categories' => [
-                                '0-4', '5-9', '10-14', '15-19',
-                                '20-24', '25-29', '30-34', '35-39', '40-44',
-                                '45-49', '50-54', '55-59', '60-64', '65-69',
-                                '70-74', '75-79', '80-84', '85-89', '90-94',
-                                '95-99', '100 + '
-                            ],
-                            'reversed' => false,
-                            'labels' => ['step' => 1]
+                        echo Highcharts::widget([
+                            'options' => [
+                                'chart' => ['type' => 'bar'],
+                                'title' => ['text' => 'ปิรามิดประชากร ปี 2560'],
+                                'xAxis' => [[
+                                'categories' => [
+                                    '0-4', '5-9', '10-14', '15-19',
+                                    '20-24', '25-29', '30-34', '35-39', '40-44',
+                                    '45-49', '50-54', '55-59', '60-64', '65-69',
+                                    '70-74', '75-79', '80-84', '85-89', '90-94',
+                                    '95-99', '100 + '
                                 ],
-                                [
-                                    'opposite' => true,
-                                    'reversed' => FALSE,
-                                    'categories' => [
-                                        '0-4', '5-9', '10-14', '15-19',
-                                        '20-24', '25-29', '30-34', '35-39', '40-44',
-                                        '45-49', '50-54', '55-59', '60-64', '65-69',
-                                        '70-74', '75-79', '80-84', '85-89', '90-94',
-                                        '95-99', '100 + '
+                                'reversed' => false,
+                                'labels' => ['step' => 1]
                                     ],
-                                    'linkedTo' => 0,
-                                    'labels' => ['step' => 1]
+                                    [
+                                        'opposite' => true,
+                                        'reversed' => FALSE,
+                                        'categories' => [
+                                            '0-4', '5-9', '10-14', '15-19',
+                                            '20-24', '25-29', '30-34', '35-39', '40-44',
+                                            '45-49', '50-54', '55-59', '60-64', '65-69',
+                                            '70-74', '75-79', '80-84', '85-89', '90-94',
+                                            '95-99', '100 + '
+                                        ],
+                                        'linkedTo' => 0,
+                                        'labels' => ['step' => 1]
+                                    ],
                                 ],
-                            ],
-                            'yAxis' => [
-                                'title' => ['text' => NULL],           
-                            ],
-                            'plotOptions' => ['series' => ['stacking' => 'normal']],     
-                            'series' => [
-                                ['name' => 'Male', 'data' => [-2.2, -2.2, -2.3, -2.5, -2.7, -3.1, -3.2,-3.0, -3.2, -4.3, -4.4, -3.6, -3.1, -2.4,-2.5, -2.3, -1.2, -0.6, -0.2, -0.0, -0.0]],
-                                ['name' => 'Female', 'data' => [2.1, 2.0, 2.2, 2.4, 2.6, 3.0, 3.1, 2.9,3.1, 4.1, 4.3, 3.6, 3.4, 2.6, 2.9, 2.9,1.8, 1.2, 0.6, 0.1, 0.0]]
+                                'yAxis' => [
+                                    'title' => ['text' => NULL],
+                                ],
+                                'plotOptions' => ['series' => ['stacking' => 'normal']],
+                                'series' => [
+                                    ['name' => 'Male', 'data' => [-2.2, -2.2, -2.3, -2.5, -2.7, -3.1, -3.2, -3.0, -3.2, -4.3, -4.4, -3.6, -3.1, -2.4, -2.5, -2.3, -1.2, -0.6, -0.2, -0.0, -0.0]],
+                                    ['name' => 'Female', 'data' => [2.1, 2.0, 2.2, 2.4, 2.6, 3.0, 3.1, 2.9, 3.1, 4.1, 4.3, 3.6, 3.4, 2.6, 2.9, 2.9, 1.8, 1.2, 0.6, 0.1, 0.0]]
+                                ]
                             ]
-                        ]
-                    ]);
+                        ]);
                     ?>
                 </div><!-- /.box-body -->
                 <div class="box-footer">
@@ -264,11 +272,11 @@ $this->title = 'KPI Template โรงพยาบาลพบพระ';
         </div>
     </div>
     <!-- /.row -->
-    
+
     <!-- /.row -->
 
     <!-- Main row -->
-    
+
     <!-- /.row -->
 </section>
 <!-- /.content -->
