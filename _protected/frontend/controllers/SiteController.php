@@ -102,7 +102,7 @@ class SiteController extends Controller {
         $opdHN = Yii::$app->db->createCommand("SELECT visit_hn FROM tmp_opd_visit")->queryScalar();
         $opdVN = Yii::$app->db->createCommand("SELECT visit_vn FROM tmp_opd_visit")->queryScalar();
         $referVN = Yii::$app->db->createCommand("SELECT refer FROM tmp_refer_visit")->queryScalar();
-        $cmi = Yii::$app->db->createCommand("SELECT amount_cmi FROM tmp_cmi")->queryAll();
+        $cmi = Yii::$app->db->createCommand("SELECT visit_mount,amount_cmi FROM tmp_cmi")->queryAll();
         
         $year = date('Y') + 543;
         $mount = date('m');

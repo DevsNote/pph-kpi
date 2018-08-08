@@ -110,9 +110,13 @@ Yii::setAlias('@icon', '../uploads/');
                 </div><!-- /.box-header -->
                 <div class="box-body">
                     <?php
-                        //$data_cmi[];
+                        $cat = array();
+                        foreach ($modelCMI AS $mount){
+                            $cat[] = $mount['visit_mount'];
+                        }
+                        $data = array();
                         foreach ($modelCMI AS $cmi) {
-                            $data_cmi[] = $cmi['amount_cmi'];
+                            $data[] = doubleval($cmi['amount_cmi']);
                             // echo $data_cmi."<br>";
                         }
                     ?>
@@ -122,14 +126,14 @@ Yii::setAlias('@icon', '../uploads/');
                                 'chart' => ['type' => 'spline'],
                                 'title' => ['text' => 'ค่า CMI ผู้ป่วยใน'],
                                 'xAxis' => [
-                                    'categories' => ['ต.ค.60', 'พ.ย.60', 'ธ.ค.60', 'ม.ค.61', 'ก.พ.61']
+                                    'categories' => $cat
                                 ],
                                 'yAxis' => [
                                     'title' => ['text' => 'จำนวนครั้ง']
                                 ],
                                 'series' => [
                                     //['name' => 'Jane', 'data' => [1, 0, 4]],
-                                    ['name' => 'ผู้ป่วยนอก', 'data' => [0.23, 0.30, 0.35, 0.41, 0.46,0.48, 0.5, 0.52, 0.54, 0.56,0.58,0.6]]
+                                    ['name' => 'ผู้ป่วยใน', 'data' => $data]
                                 ]
                             ]
                         ]);
@@ -139,7 +143,48 @@ Yii::setAlias('@icon', '../uploads/');
             </div><!-- /.box -->
         </div>
         <div class="col-md-6">
-<?php print_r($data_cmi);?>
+            <div class="box box-danger">
+                <div class="box-header with-border">
+                    <h3 class="box-title">ประมวลผล ณ วันที่ : Demo Data</h3>
+                    <div class="box-tools pull-right">
+                        <!-- Buttons, labels, and many other things can be placed here! -->
+                        <!-- Here is a label for example -->
+                        <span class="label label-primary">Label</span>
+                    </div><!-- /.box-tools -->
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <?php
+                        $cat = array();
+                        foreach ($modelCMI AS $mount){
+                            $cat[] = $mount['visit_mount'];
+                        }
+                        $data = array();
+                        foreach ($modelCMI AS $cmi) {
+                            $data[] = doubleval($cmi['amount_cmi']);
+                            // echo $data_cmi."<br>";
+                        }
+                    ?>
+                    <?php
+                        echo Highcharts::widget([
+                            'options' => [
+                                'chart' => ['type' => 'spline'],
+                                'title' => ['text' => 'ค่า CMI ผู้ป่วยใน'],
+                                'xAxis' => [
+                                    'categories' => $cat
+                                ],
+                                'yAxis' => [
+                                    'title' => ['text' => 'จำนวนครั้ง']
+                                ],
+                                'series' => [
+                                    //['name' => 'Jane', 'data' => [1, 0, 4]],
+                                    ['name' => 'ผู้ป่วยใน', 'data' => $data]
+                                ]
+                            ]
+                        ]);
+                    ?>
+
+                </div><!-- /.box-body -->
+            </div><!-- /.box -->
         </div>
     </div>
     <!-- /.row -->
